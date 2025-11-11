@@ -1,0 +1,499 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}
+
+.rtl-flip {
+  transform: scaleX(-1);
+}
+
+/*
+  Add this to your global.css or index.css file
+*/
+
+/* 1. For the background aurora effect */
+@keyframes gradient-slow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 2. For the glowing title and card border */
+@keyframes text-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 3. For the card entrance */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+
+@keyframes pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient-slow 15s ease infinite;
+}
+
+.animate-text-gradient {
+  background-size: 200% 200%;
+  animation: text-gradient 3s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out forwards;
+}
+
+/* === NEW: Utility for the image === */
+.animate-pan {
+  /* A longer animation for a subtle effect */
+  animation: pan 20s ease-in-out infinite;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+  opacity: 0;
+  /* Start as invisible until animation kicks in */
+}
+
+
+
+@keyframes gradient-slow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient-slow 15s ease infinite;
+}
+
+/* 2. For the floating ICPC/idea icons */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+
+  80% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animated-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.animated-icons li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  color: rgba(0, 255, 255, 0.2);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+
+  bottom: -150px;
+
+  animation: float linear infinite;
+
+  pointer-events: none;
+
+  will-change: transform, opacity;
+}
+
+.animated-icons li:nth-child(1) {
+  left: 25%;
+  font-size: 1.5rem;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.animated-icons li:nth-child(2) {
+  left: 10%;
+  font-size: 1.25rem;
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+
+.animated-icons li:nth-child(3) {
+  left: 70%;
+  font-size: 1.875rem;
+  animation-duration: 18s;
+  animation-delay: 4s;
+}
+
+.animated-icons li:nth-child(4) {
+  left: 40%;
+  font-size: 1rem;
+  /* 16px */
+  animation-duration: 22s;
+  animation-delay: 0s;
+}
+
+.animated-icons li:nth-child(5) {
+  left: 65%;
+  font-size: 1.25rem;
+  /* 20px */
+  animation-duration: 30s;
+  animation-delay: 7s;
+}
+
+.animated-icons li:nth-child(6) {
+  left: 85%;
+  font-size: 1.875rem;
+  /* 30px */
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+.animated-icons li:nth-child(7) {
+  left: 15%;
+  font-size: 1rem;
+  /* 16px */
+  animation-duration: 28s;
+  animation-delay: 10s;
+}
+
+.animated-icons li:nth-child(8) {
+  left: 50%;
+  font-size: 1.125rem;
+  /* 18px */
+  animation-duration: 23s;
+  animation-delay: 12s;
+}
+
+.animated-icons li:nth-child(9) {
+  left: 30%;
+  font-size: 1.5rem;
+  /* 24px */
+  animation-duration: 21s;
+  animation-delay: 5s;
+}
+
+.animated-icons li:nth-child(10) {
+  left: 75%;
+  font-size: 1rem;
+  /* 16px */
+  animation-duration: 26s;
+  animation-delay: 15s;
+}
+
+.stars-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shooting Star Base Style */
+.shooting-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 1);
+  animation: shooting 20s infinite linear;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Star Trail Effect */
+.shooting-star::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(90deg, #fff, transparent);
+  pointer-events: none;
+}
+
+/* Individual Star Positions - spread across top edge */
+
+/* From TOP-LEFT area */
+.shooting-star:nth-child(1) {
+  top: -100px;
+  left: 10%;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: -150px;
+  left: 25%;
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+
+/* From TOP-CENTER area */
+.shooting-star:nth-child(3) {
+  top: -80px;
+  left: 40%;
+  animation-duration: 18s;
+  animation-delay: 4s;
+}
+
+.shooting-star:nth-child(4) {
+  top: -120px;
+  left: 50%;
+  animation-duration: 22s;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(5) {
+  top: -90px;
+  left: 60%;
+  animation-duration: 30s;
+  animation-delay: 7s;
+}
+
+/* From TOP-RIGHT area */
+.shooting-star:nth-child(6) {
+  top: -200px;
+  right: -100px;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+.shooting-star:nth-child(7) {
+  top: -110px;
+  left: 15%;
+  animation-duration: 28s;
+  animation-delay: 10s;
+}
+
+.shooting-star:nth-child(8) {
+  top: -130px;
+  right: -80px;
+  animation-duration: 23s;
+  animation-delay: 12s;
+}
+
+.shooting-star:nth-child(9) {
+  top: -170px;
+  left: 70%;
+  animation-duration: 21s;
+  animation-delay: 5s;
+}
+
+.shooting-star:nth-child(10) {
+  top: -140px;
+  right: -160px;
+  animation-duration: 26s;
+  animation-delay: 15s;
+}
+
+/* Shooting Animation - stars fade in as they enter viewport, then shoot diagonally */
+@keyframes shooting {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(315deg) translateX(-1800px);
+    opacity: 0;
+  }
+}
+
+/* Content should have relative positioning and higher z-index */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Shooting Animation - stars fade in as they enter viewport, then shoot diagonally */
+@keyframes shooting {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(315deg) translateX(-1800px);
+    opacity: 0;
+  }
+}
+
+@keyframes float-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-gentle-reverse {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(20px) scale(1.05);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 20s ease-in-out infinite !important;
+}
+
+.animate-float-gentle-reverse {
+  animation: float-gentle-reverse 25s ease-in-out infinite !important;
+}
+
+/* Glowing effects for images */
+.glow-blue {
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.4),
+    0 0 80px rgba(56, 189, 248, 0.3),
+    0 0 120px rgba(56, 189, 248, 0.2);
+  filter: brightness(0.75) drop-shadow(0 0 30px rgba(56, 189, 248, 0.5));
+}
+
+.glow-green {
+  box-shadow: 0 0 40px rgba(34, 197, 94, 0.4),
+    0 0 80px rgba(34, 197, 94, 0.3),
+    0 0 120px rgba(34, 197, 94, 0.2);
+  filter: brightness(0.75) drop-shadow(0 0 30px rgba(34, 197, 94, 0.5));
+}
